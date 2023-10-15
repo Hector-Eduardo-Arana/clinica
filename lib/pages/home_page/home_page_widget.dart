@@ -9,12 +9,7 @@ import 'home_page_model.dart';
 export 'home_page_model.dart';
 
 class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({
-    Key? key,
-    this.hector,
-  }) : super(key: key);
-
-  final String? hector;
+  const HomePageWidget({Key? key}) : super(key: key);
 
   @override
   _HomePageWidgetState createState() => _HomePageWidgetState();
@@ -49,24 +44,21 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
           top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Expanded(
-                child: Align(
-                  alignment: AlignmentDirectional(0.00, -1.00),
-                  child: FlutterFlowWebView(
-                    content:
-                        'https://clinicaenequilibrio.com/BlissBot/IniciaSesion',
-                    bypass: false,
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: MediaQuery.sizeOf(context).height * 1.0,
-                    verticalScroll: true,
-                    horizontalScroll: true,
-                  ),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min, // Cambiado de max a min
+              children: [
+                FlutterFlowWebView(
+                  content:
+                  'https://clinicaenequilibrio.com/BlissBot/IniciaSesion',
+                  bypass: false,
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  height: MediaQuery.sizeOf(context).height * 0.5,
+                  verticalScroll: true,
+                  horizontalScroll: true,
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

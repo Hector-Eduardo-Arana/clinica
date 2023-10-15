@@ -54,14 +54,14 @@ android {
         versionName flutterVersionName
     }
 
-   signingConfigs {
-       release {
-           keyAlias keystoreProperties['keyAlias']
-           keyPassword keystoreProperties['keyPassword']
-           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-           storePassword keystoreProperties['storePassword']
-       }
-   }
+    signingConfigs {
+        release {
+            storeFile file('C:/Users/eddhacecosas/AndroidStudioProjects/clinica_en_equilibrio/my-release-key.jks')
+            storePassword 'edd44453212' // Reemplaza 'your_keystore_password' con tu contraseña del keystore
+            keyAlias 'my-release-key' // Reemplaza 'your_key_alias' con el alias de la clave
+            keyPassword 'edd44453212' // Reemplaza 'your_key_password' con la contraseña de la clave
+        }
+    }
 
     buildTypes {
         release {
